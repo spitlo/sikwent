@@ -2,6 +2,10 @@
 
 This changelog is automatically generated.
 
+## v0.0.4
+
+- Add slight reverb [`555f3a6`](../../commit/555f3a6d5770db1215ebb956f4f3961b5d02c211)
+
 ## v0.0.3
 
 - Add time as argument to triggerAttackRelease. No more drunken drummer [`21d8197`](../../commit/21d8197b7ea9696f81a85c3e75da1b0b3a3b50f6)
