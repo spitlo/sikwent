@@ -21,13 +21,10 @@ function App() {
     if (storage && storage.bpm) {
       setStore(storage)
     }
-    // actions.initContext()
   }
 
   const cleanup = () => {
-    if (store.context) {
-      store.context.close()
-    }
+    Tone.Transport.dispose()
   }
 
   onMount(initApp)

@@ -13,7 +13,6 @@ const initialnstrument = getRandomInt(0, instruments.length - 1)
 let index = 0
 
 const [store, setStore] = createStore({
-  context: undefined,
   bpm: 85,
   playing: false,
   initiated: false,
@@ -32,8 +31,6 @@ const [store, setStore] = createStore({
 })
 
 const initContext = () => {
-  // const context = new window.AudioContext()
-  // setStore('context', context)
   Tone.setContext(new Tone.Context({ latencyHint: 'playback' }))
 }
 
