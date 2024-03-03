@@ -7,7 +7,8 @@
     "build": "vite build --base=/sikwent/",
     "format": "prettier . --write",
     "serve": "yarn build && vite preview --base=/sikwent/",
-    "start": "vite"
+    "start": "vite",
+    "testbuild": "vite build --base=/sikwent/ --outDir=./tmp/testbuild"
   },
   "license": "MIT",
   "devDependencies": {
