@@ -1,5 +1,6 @@
 import {
   AMSynth,
+  Destination,
   Filter,
   FMSynth,
   MembraneSynth,
@@ -8,8 +9,15 @@ import {
   NoiseSynth,
   PluckSynth,
   PolySynth,
+  Reverb,
   Synth,
 } from 'tone'
+
+const reverb = new Reverb({
+  decay: 0.05,
+  wet: 0.5,
+})
+Destination.chain(reverb)
 
 const lowPass = new Filter({
   frequency: 11000,

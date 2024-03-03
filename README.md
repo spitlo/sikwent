@@ -8,14 +8,14 @@ You start with a single track with a single tick (checkbox). To add a track, you
 
 ## To do
 
-- [ ] Fix saving/loading
 - [ ] Add two sampler channels
-- [ ] Tewak all synths
-- [ ] FIX LAG!
 - [ ] Styling
-- [ ] Start using Kobalte?
+- [ ] Tweak all synths
 - [x] Everything
+- [x] FIX LAG!
+- [x] Fix saving/loading
 - [x] ~~Learn Tailwind~~ or throw it out!
+- [x] ~~Start using Kobalte?~~
 
 ## Sources
 
