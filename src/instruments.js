@@ -258,7 +258,7 @@ const metal2 = {
     envelope: {
       decay: 0.5,
     },
-    volume: -10,
+    volume: -14,
   }).toDestination(),
 }
 metal2.engine.sync()
