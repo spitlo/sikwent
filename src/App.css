@@ -17,7 +17,7 @@ input[type='checkbox'].offstep {
 
 .toolbar {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .toolbar input {

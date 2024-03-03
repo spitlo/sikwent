@@ -59,10 +59,13 @@ function App() {
         </For>
         <div></div>
         <div class="grid toolbar">
-          <button onClick={actions.saveStore} disabled>
+          <button onClick={actions.saveStore} disabled={store.saved}>
             Save
           </button>
-          <button onClick={actions.togglePlay} disabled>
+          <button
+            onClick={actions.initAndPlay}
+            disabled={store.playing || store.tracks.length === 1}
+          >
             Play
           </button>
           <input
@@ -74,6 +77,9 @@ function App() {
               actions.setBpm(e.target.value)
             }}
           />
+          <button onClick={actions.reset} disabled={store.tracks.length === 1}>
+            Reset
+          </button>
         </div>
       </div>
     </>

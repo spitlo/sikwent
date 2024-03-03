@@ -17,6 +17,7 @@ const [store, setStore] = createStore({
   bpm: 85,
   playing: false,
   initiated: false,
+  saved: true,
   steps: [0],
   usedInstruments: [initialnstrument],
   tracks: [
@@ -70,14 +71,8 @@ const loop = (time) => {
   index++
 }
 
+// Unused
 const togglePlay = async () => {
-  if (!store.initiated) {
-    Tone.start()
-    setStore('initiated', true)
-    Tone.Transport.bpm.value = store.bpm
-    Tone.Transport.scheduleRepeat(loop, '16n')
-    Tone.Transport.start()
-  }
   if (store.playing) {
     await Tone.Transport.stop()
     setStore('playing', false)
@@ -111,15 +106,20 @@ const addTrack = () => {
   )
 }
 
-const toggleTick = (trackId, tickId) => {
+const toggleTick = async (trackId, tickId) => {
   if (trackId === 0) {
+    // Start playing when first checkbox is checked
     if (!store.initiated) {
       Tone.start()
-      setStore('initiated', true)
-
       Tone.Transport.bpm.value = store.bpm
       Tone.Transport.scheduleRepeat(loop, '16n')
-      Tone.Transport.start()
+      await Tone.Transport.start()
+      setStore(
+        produce((store) => {
+          store.initiated = true
+          store.playing = true
+        })
+      )
     }
   }
 
@@ -130,6 +130,7 @@ const toggleTick = (trackId, tickId) => {
       track.ticks[tickId] = !track.ticks[tickId]
     })
   )
+  setStore('saved', false)
 
   // Enable next track if possible
   // This should only happen on first click
@@ -139,22 +140,55 @@ const toggleTick = (trackId, tickId) => {
 }
 
 const setBpm = (newBpm) => {
-  setStore('bpm', newBpm)
   Tone.Transport.bpm.value = newBpm
+  setStore(
+    produce((store) => {
+      store.bpm = newBpm
+      store.saved = false
+    })
+  )
 }
 
-const saveStore = () => {
+const saveStore = async () => {
+  await Tone.Transport.stop()
+  setStore(
+    produce((store) => {
+      store.initiated = false
+      store.playing = false
+      store.saved = true
+    })
+  )
   stash(store)
   save()
 }
 
+const initAndPlay = async () => {
+  await Tone.start()
+  Tone.Transport.bpm.value = store.bpm
+  Tone.Transport.scheduleRepeat(loop, '16n')
+  await Tone.Transport.start()
+
+  setStore(
+    produce((store) => {
+      store.initiated = true
+      store.playing = true
+    })
+  )
+}
+
+const reset = () => {
+  location.href = '.'
+}
+
 const actions = {
   addTrack,
+  initAndPlay,
   initContext,
   saveStore,
   setBpm,
   togglePlay,
   toggleTick,
+  reset,
 }
 
 export { actions, loop, setStore, store }
