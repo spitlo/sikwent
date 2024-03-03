@@ -1,6 +1,5 @@
 import * as Tone from 'tone'
 import { createStore, produce } from 'solid-js/store'
-import Dismiss from 'solid-dismiss'
 import {
   createEffect,
   createSignal,
@@ -22,7 +21,7 @@ function App() {
     if (storage && storage.bpm) {
       setStore(storage)
     }
-    actions.initContext()
+    // actions.initContext()
   }
 
   const cleanup = () => {
@@ -33,17 +32,6 @@ function App() {
 
   onMount(initApp)
   onCleanup(cleanup)
-
-  let saveButtonRel
-  let okButtonRel
-  const [showHasSaved, setShowHasSaved] = createSignal(false)
-  const closeHasSaved = () => {
-    setShowHasSaved(false)
-  }
-  const onClickOverlay = (e) => {
-    if (e.target !== e.currentTarget) return
-    setShowHasSaved(false)
-  }
 
   return (
     <>
@@ -79,53 +67,9 @@ function App() {
         </For>
         <div></div>
         <div class="grid toolbar">
-          <button
-            onClick={() => {
-              actions.saveStore()
-              setShowHasSaved(true)
-            }}
-            disabled={store.saved}
-            rel={saveButtonRel}
-          >
+          <button onClick={actions.saveStore} disabled={store.saved}>
             Save
           </button>
-          <Dismiss
-            focusElementOnOpen={() => okButtonRel}
-            menuButton={saveButtonRel}
-            modal
-            open={showHasSaved}
-            setOpen={setShowHasSaved}
-          >
-            <div
-              class="modal-container"
-              onClick={onClickOverlay}
-              role="presentation"
-            >
-              <div class="modal" role="dialog" aria-modal="true" tabindex="-1">
-                <h4>Saved!</h4>
-                <p>
-                  This project is now saved in the URL. You can copy the URL and
-                  share with a friend, or keep it for yourself.
-                </p>
-                <p>
-                  To update the URL after you have done some changes, just hit
-                  "Save" again.
-                </p>
-                <div class="close-button">
-                  <button onClick={closeHasSaved} ref={okButtonRel}>
-                    Ok!
-                  </button>
-                </div>
-                <button
-                  class="x-button"
-                  aria-label="Close modal"
-                  onClick={closeHasSaved}
-                >
-                  ×
-                </button>
-              </div>
-            </div>
-          </Dismiss>
           <button
             onClick={actions.initAndPlay}
             disabled={store.playing || store.tracks.length === 1}

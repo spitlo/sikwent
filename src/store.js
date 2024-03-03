@@ -32,8 +32,9 @@ const [store, setStore] = createStore({
 })
 
 const initContext = () => {
-  const context = new window.AudioContext()
-  setStore('context', context)
+  // const context = new window.AudioContext()
+  // setStore('context', context)
+  Tone.setContext(new Tone.Context({ latencyHint: 'playback' }))
 }
 
 const loop = (time) => {
@@ -50,7 +51,11 @@ const loop = (time) => {
           if (engine.name === 'NoiseSynth') {
             engine.triggerAttackRelease('32n')
           } else {
-            engine.triggerAttackRelease(`${currentTrack.note}${octave}`, '32n')
+            engine.triggerAttackRelease(
+              `${currentTrack.note}${octave}`,
+              '32n',
+              '+0.05'
+            )
           }
         } else {
           console.log(
@@ -69,17 +74,6 @@ const loop = (time) => {
   }
 
   index++
-}
-
-// Unused
-const togglePlay = async () => {
-  if (store.playing) {
-    await Tone.Transport.stop()
-    setStore('playing', false)
-  } else {
-    await Tone.Transport.start()
-    setStore('playing', true)
-  }
 }
 
 const addTrack = () => {
@@ -113,7 +107,7 @@ const toggleTick = async (trackId, tickId) => {
       Tone.start()
       Tone.Transport.bpm.value = store.bpm
       Tone.Transport.scheduleRepeat(loop, '16n')
-      await Tone.Transport.start()
+      await Tone.Transport.start('+0.1')
       setStore(
         produce((store) => {
           store.initiated = true
@@ -166,7 +160,7 @@ const initAndPlay = async () => {
   await Tone.start()
   Tone.Transport.bpm.value = store.bpm
   Tone.Transport.scheduleRepeat(loop, '16n')
-  await Tone.Transport.start()
+  await Tone.Transport.start('+0.1')
 
   setStore(
     produce((store) => {
@@ -184,11 +178,10 @@ const actions = {
   addTrack,
   initAndPlay,
   initContext,
+  reset,
   saveStore,
   setBpm,
-  togglePlay,
   toggleTick,
-  reset,
 }
 
 export { actions, loop, setStore, store }

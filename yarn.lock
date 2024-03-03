@@ -1020,11 +1020,6 @@ solid-devtools@^0.29.2:
     "@solid-devtools/debugger" "^0.23.3"
     "@solid-devtools/shared" "^0.13.1"
 
-solid-dismiss@^1.7.122:
-  version "1.7.122"
-  resolved "https://registry.yarnpkg.com/solid-dismiss/-/solid-dismiss-1.7.122.tgz#b178a872a58114db2812f07c2470ddb52d246368"
-  integrity sha512-CRY2BDq0PZSP7hGRlYcAgSW2969YjEr8k2zHCyGZ6qtELvJDVQla7M0LSI8fxVmc+BhQINfzoFLlcALlkT4pOg==
-
 solid-icons@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/solid-icons/-/solid-icons-1.1.0.tgz#6e914bce4f9a34a654230b68c68a7d04359ff2b6"
