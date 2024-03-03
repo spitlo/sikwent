@@ -1,0 +1,25 @@
+input[type='checkbox'].onstep {
+  background-color: orange;
+}
+input[type='checkbox'].offstep {
+  border: 1px solid green;
+}
+
+.container {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 1.5fr 8.5fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  justify-items: stretch;
+  align-items: stretch;
+}
+
+.toolbar {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.toolbar input {
+  margin-bottom: 0;
+}

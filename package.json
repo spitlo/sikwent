@@ -1,0 +1,27 @@
+{
+  "name": "sikwent",
+  "version": "0.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "build": "vite build --base=/sikwent/",
+    "format": "prettier . --write",
+    "serve": "yarn build && vite preview --base=/sikwent/",
+    "start": "vite"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^10.4.17",
+    "postcss": "^8.4.33",
+    "prettier": "3.2.5",
+    "solid-devtools": "^0.29.2",
+    "vite": "^5.0.11",
+    "vite-plugin-solid": "^2.8.2"
+  },
+  "dependencies": {
+    "@kobalte/core": "^0.12.2",
+    "solid-icons": "^1.1.0",
+    "solid-js": "^1.8.11",
+    "tone": "^14.7.77"
+  }
+}
