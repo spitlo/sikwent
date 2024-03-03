@@ -46,12 +46,12 @@ const loop = (time) => {
         const octave = instrument.octave || 4
         if (engine) {
           if (engine.name === 'NoiseSynth') {
-            engine.triggerAttackRelease('32n')
+            engine.triggerAttackRelease('32n', time)
           } else {
             engine.triggerAttackRelease(
               `${currentTrack.note}${octave}`,
               '32n',
-              '+0.05'
+              time
             )
           }
         } else {
