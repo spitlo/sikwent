@@ -1,6 +1,6 @@
 import {
-  AutoFilter,
   AMSynth,
+  AutoFilter,
   Destination,
   DuoSynth,
   Filter,
@@ -18,18 +18,21 @@ import {
 
 const SAMPLE_BASE_URL = './sounds/'
 
+// Add reverb to master channel
 const destinationReverb = new Reverb({
   decay: 0.05,
   wet: 0.5,
 })
 Destination.chain(destinationReverb)
 
+// Set up reverb and auto filter for DuoSynths
 const duoReverb = new Reverb({
   decay: 0.3,
   wet: 0.7,
 })
 const duoFilter = new AutoFilter('4n').toDestination().start()
 
+// Low pass filter for snare
 const lowPass = new Filter({
   frequency: 11000,
 }).toDestination()
@@ -56,7 +59,6 @@ const snare = {
     },
   })
     .connect(lowPass)
-
     .toDestination(),
 }
 snare.engine.sync()
@@ -303,17 +305,29 @@ const metal2 = {
 }
 metal2.engine.sync()
 
-// This should probably be a sampler?
 const fun1 = {
   name: 'Fun 1',
-  engine: new Synth({ volume: -6 }).toDestination(),
+  engine: new Synth({
+    volume: -6,
+    oscillator: {
+      type: 'fatsawtooth',
+      harmonicity: 4,
+      modulationType: 'amtriangle',
+    },
+  }).toDestination(),
 }
 fun1.engine.sync()
 
-// This should probably be a sampler?
 const fun2 = {
   name: 'Fun 2',
-  engine: new Synth({ volume: -6 }).toDestination(),
+  engine: new Synth({
+    volume: -6,
+    oscillator: {
+      type: 'sine',
+      harmonicity: 0.5,
+      modulationType: 'fatsawtooth',
+    },
+  }).toDestination(),
 }
 fun2.engine.sync()
 
@@ -363,7 +377,7 @@ const duo1 = {
   name: 'Duo 1',
   octave: 2,
   engine: new DuoSynth({
-    volume: -4,
+    volume: -6,
     portamento: 0.5,
     vibratoAmount: 1,
     vibratoRate: 1,
@@ -375,7 +389,7 @@ const duo2 = {
   name: 'Duo 2',
   octave: 1,
   engine: new DuoSynth({
-    volume: -4,
+    volume: -6,
     portamento: 0,
     vibratoAmount: 0.5,
     vibratoRate: 0.5,
