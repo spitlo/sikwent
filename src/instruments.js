@@ -16,7 +16,7 @@ import {
   Synth,
 } from 'tone'
 
-const SAMPLE_BASE_URL = '/sounds/'
+const SAMPLE_BASE_URL = './sounds/'
 
 const destinationReverb = new Reverb({
   decay: 0.05,
