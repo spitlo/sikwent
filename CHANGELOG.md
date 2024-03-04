@@ -2,6 +2,11 @@
 
 This changelog is automatically generated.
 
+## v0.0.7
+
+- Add fonts [`f27aa29`](../../commit/f27aa29798ff067cc643018f039f115a3d5f61b6)
+- Tighter grid [`d516ce5`](../../commit/d516ce5164201988cdf06f28177cbd207233fcc6)
+
 ## v0.0.6
 
 - No more green borders [`6c70993`](../../commit/6c70993bf178261c64ab2450b84d8ac18db0d97c)
