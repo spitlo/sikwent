@@ -1,6 +1,8 @@
 import {
+  AutoFilter,
   AMSynth,
   Destination,
+  DuoSynth,
   Filter,
   FMSynth,
   MembraneSynth,
@@ -10,14 +12,23 @@ import {
   PluckSynth,
   PolySynth,
   Reverb,
+  Sampler,
   Synth,
 } from 'tone'
 
-const reverb = new Reverb({
+const SAMPLE_BASE_URL = '/sounds/'
+
+const destinationReverb = new Reverb({
   decay: 0.05,
   wet: 0.5,
 })
-Destination.chain(reverb)
+Destination.chain(destinationReverb)
+
+const duoReverb = new Reverb({
+  decay: 0.3,
+  wet: 0.7,
+})
+const duoFilter = new AutoFilter('4n').toDestination().start()
 
 const lowPass = new Filter({
   frequency: 11000,
@@ -326,9 +337,57 @@ const fat = {
 }
 fat.engine.sync()
 
+const sampler1 = {
+  name: 'Sampler 1',
+  engine: new Sampler({
+    urls: {
+      C4: 'uh.mp3',
+    },
+    baseUrl: SAMPLE_BASE_URL,
+  }).toDestination(),
+}
+sampler1.engine.sync()
+
+const sampler2 = {
+  name: 'Sampler 2',
+  engine: new Sampler({
+    urls: {
+      C4: 'yeah.mp3',
+    },
+    baseUrl: SAMPLE_BASE_URL,
+  }).toDestination(),
+}
+sampler2.engine.sync()
+
+const duo1 = {
+  name: 'Duo 1',
+  octave: 2,
+  engine: new DuoSynth({
+    volume: -4,
+    portamento: 0.5,
+    vibratoAmount: 1,
+    vibratoRate: 1,
+  }).chain(duoFilter, duoReverb, Destination),
+}
+duo1.engine.sync()
+
+const duo2 = {
+  name: 'Duo 2',
+  octave: 1,
+  engine: new DuoSynth({
+    volume: -4,
+    portamento: 0,
+    vibratoAmount: 0.5,
+    vibratoRate: 0.5,
+  }).chain(duoFilter, duoReverb, Destination),
+}
+duo2.engine.sync()
+
 const instruments = [
   am1,
   am2,
+  duo1,
+  duo2,
   fat,
   fm1,
   fm2,
@@ -342,6 +401,8 @@ const instruments = [
   mono2,
   pluck1,
   pluck2,
+  sampler1,
+  sampler2,
   snare,
   synth1,
   synth2,
