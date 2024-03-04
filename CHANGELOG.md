@@ -2,6 +2,10 @@
 
 This changelog is automatically generated.
 
+## v0.0.6
+
+- No more green borders [`6c70993`](../../commit/6c70993bf178261c64ab2450b84d8ac18db0d97c)
+
 ## v0.0.5
 
 - Improve AM 2 [`a18fba4`](../../commit/a18fba4fa6759f4ffa0abbf71f584119fc953564)
