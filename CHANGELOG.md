@@ -2,6 +2,11 @@
 
 This changelog is automatically generated.
 
+## v0.0.5
+
+- Improve AM 2 [`a18fba4`](../../commit/a18fba4fa6759f4ffa0abbf71f584119fc953564)
+- Volumes [`78a70f8`](../../commit/78a70f8e23ff71a065a43bc1102ec8d9a565fcde)
+
 ## v0.0.4
 
 - Add slight reverb [`555f3a6`](../../commit/555f3a6d5770db1215ebb956f4f3961b5d02c211)
