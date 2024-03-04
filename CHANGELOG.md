@@ -2,6 +2,10 @@
 
 This changelog is automatically generated.
 
+## v0.0.8
+
+- Add samplers and more synths [`59e1a83`](../../commit/59e1a83fddad57b593aee4fc3627fcd98acf652c)
+
 ## v0.0.7
 
 - Add fonts [`f27aa29`](../../commit/f27aa29798ff067cc643018f039f115a3d5f61b6)
