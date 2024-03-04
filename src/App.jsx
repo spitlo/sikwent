@@ -9,6 +9,7 @@ import {
   Show,
 } from 'solid-js'
 
+import instruments from './instruments'
 import Track from './components/Track'
 import { actions, setStore, store, loop } from './store'
 import { load, save, stash, storage } from './storage'
@@ -33,8 +34,11 @@ function App() {
   return (
     <>
       <div class="container">
-        <div></div>
-        <div></div>
+        <div class="header">
+          Track / {instruments.length - store.tracks.length}
+        </div>
+        <div class="header"></div>
+
         <For each={store.tracks}>
           {(track, trackIndex) => {
             const { id, ticks } = track
@@ -62,6 +66,7 @@ function App() {
             )
           }}
         </For>
+
         <div></div>
         <div class="grid toolbar">
           <button onClick={actions.saveStore} disabled={store.saved}>

@@ -8,7 +8,7 @@ const Track = (props) => {
   }
   return (
     <>
-      <div>
+      <div class="track-info">
         {instrument.name}: {track.note}
       </div>
       <div>{props.children}</div>
