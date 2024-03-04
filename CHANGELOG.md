@@ -2,6 +2,11 @@
 
 This changelog is automatically generated.
 
+## v0.0.10
+
+- Use keys a-z to mute tracks [`0f943bd`](../../commit/0f943bda6773c11f133db6b146275cde9033b791)
+- Tweak synths [`f1a40c1`](../../commit/f1a40c1328579cfdc3b03752e603c1f358cc8c9c)
+
 ## v0.0.9
 
 - Try different sample base url [`d7c0cd0`](../../commit/d7c0cd00a4bbbe0b6bc0cd88527266df3c76b5c4)
