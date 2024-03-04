@@ -503,7 +503,7 @@
   dependencies:
     "@solid-primitives/utils" "^6.2.3"
 
-"@solid-primitives/keyboard@^1.2.5":
+"@solid-primitives/keyboard@^1.2.5", "@solid-primitives/keyboard@^1.2.7":
   version "1.2.7"
   resolved "https://registry.yarnpkg.com/@solid-primitives/keyboard/-/keyboard-1.2.7.tgz#f985f5aaac48b03d89c18f736762662b60ffc6a0"
   integrity sha512-XhUtCALK0cj5IVT+0iaAcCpehtmu1Kusod3cPNxIJF9E5BOKwqAEoMNVbpIb6WyIbxATaa50yFjZ5Td+Uizh5Q==

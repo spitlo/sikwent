@@ -38,28 +38,24 @@ const loop = (time) => {
   for (let trackId = 0; trackId < store.tracks.length; trackId++) {
     let step = index % (trackId + 1)
     const currentTrack = store.tracks[trackId]
-    if (currentTrack.ticks[step]) {
-      const instrumentId = currentTrack.instrument
-      if (instruments[instrumentId]) {
-        const instrument = instruments[instrumentId]
-        const engine = instrument.engine
-        const octave = instrument.octave || 4
-        if (engine) {
-          if (engine.name === 'NoiseSynth') {
-            engine.triggerAttackRelease('32n', time)
-          } else {
-            engine.triggerAttackRelease(
-              `${currentTrack.note}${octave}`,
-              '32n',
-              time
-            )
+    if (!currentTrack.muted) {
+      if (currentTrack.ticks[step]) {
+        const instrumentId = currentTrack.instrument
+        if (instruments[instrumentId]) {
+          const instrument = instruments[instrumentId]
+          const engine = instrument.engine
+          const octave = instrument.octave || 4
+          if (engine) {
+            if (engine.name === 'NoiseSynth') {
+              engine.triggerAttackRelease('32n', time)
+            } else {
+              engine.triggerAttackRelease(
+                `${currentTrack.note}${octave}`,
+                '32n',
+                time
+              )
+            }
           }
-        } else {
-          console.log(
-            'Instrument not found',
-            instrumentId,
-            instrument
-          ) /* eslint-disable-line */
         }
       }
     }
@@ -67,9 +63,6 @@ const loop = (time) => {
     Tone.Draw.schedule(() => {
       const steps = store.steps
       setStore('steps', trackId, step)
-      // setTimeout(() => {
-      //   setStore('steps', trackId, -1)
-      // }, 100)
     }, time)
   }
 
@@ -133,6 +126,16 @@ const toggleTick = async (trackId, tickId) => {
   }
 }
 
+const toggleMute = (trackId) => {
+  setStore(
+    'tracks',
+    (tracks) => tracks.id === trackId,
+    produce((track) => {
+      track.muted = !track.muted
+    })
+  )
+}
+
 const setBpm = (newBpm) => {
   Tone.Transport.bpm.value = newBpm
   setStore(
@@ -181,6 +184,7 @@ const actions = {
   reset,
   saveStore,
   setBpm,
+  toggleMute,
   toggleTick,
 }
 

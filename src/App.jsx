@@ -1,5 +1,4 @@
 import * as Tone from 'tone'
-import { createStore, produce } from 'solid-js/store'
 import {
   createEffect,
   createSignal,
@@ -43,7 +42,10 @@ function App() {
           {(track, trackIndex) => {
             const { id, ticks } = track
             return (
-              <Track class="container" track={track}>
+              <Track
+                class={`track ${track.muted ? 'muted' : ''}`}
+                track={track}
+              >
                 <For each={ticks}>
                   {(tick, tickIndex) => {
                     return (

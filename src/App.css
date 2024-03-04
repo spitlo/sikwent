@@ -1,18 +1,20 @@
-input[type='checkbox'].onstep {
-  background-color: orange;
-}
-
 .container {
   font-family: Menu;
-  font-size: 24px;
+  font-size: 23px;
   line-height: 24px;
   margin-top: 1rem;
   display: grid;
-  grid-template-columns: 1.5fr 8.5fr;
+  grid-template-columns: 1.7fr 8.3fr;
   grid-column-gap: 8px;
   grid-row-gap: 8px;
   justify-items: stretch;
   align-items: stretch;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1010px;
+  }
 }
 
 .container .header {
@@ -24,10 +26,16 @@ input[type='checkbox'].onstep {
   text-transform: uppercase;
 }
 
-@media (min-width: 1024px) {
-  .container {
-    max-width: 1000px;
-  }
+.track.muted {
+  opacity: 0.1;
+}
+
+input[type='checkbox'].onstep {
+  background-color: orange;
+}
+
+.track.muted input[type='checkbox'].onstep {
+  background-color: black;
 }
 
 .toolbar {
