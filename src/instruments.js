@@ -61,6 +61,7 @@ const tom1 = {
   name: 'Tom Lo',
   octave: 3,
   engine: new MembraneSynth({
+    volume: -3,
     pitchDecay: 0.008,
     envelope: { attack: 0.01, decay: 0.5, sustain: 0 },
   }).toDestination(),
@@ -70,6 +71,7 @@ tom1.engine.sync()
 const tom2 = {
   name: 'Tom Mid',
   engine: new MembraneSynth({
+    volume: -3,
     pitchDecay: 0.008,
     envelope: { attack: 0.01, decay: 0.5, sustain: 0 },
   }).toDestination(),
@@ -151,7 +153,7 @@ const fm2 = {
   name: 'FM 2',
   octave: 2,
   engine: new FMSynth({
-    volume: -6,
+    volume: -3,
     modulationIndex: 12.22,
     envelope: {
       attack: 0.5,
@@ -233,7 +235,7 @@ pluck2.engine.sync()
 
 const am1 = {
   name: 'AM 1',
-  engine: new AMSynth({ volume: -6 }).toDestination(),
+  engine: new AMSynth({ volume: -3 }).toDestination(),
 }
 am1.engine.sync()
 
