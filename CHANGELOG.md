@@ -2,6 +2,10 @@
 
 This changelog is automatically generated.
 
+## v0.0.11
+
+- Add help text [`e3bf8d5`](../../commit/e3bf8d58e8ad1166b0d3d479167180df9ca90050)
+
 ## v0.0.10
 
 - Use keys a-z to mute tracks [`0f943bd`](../../commit/0f943bda6773c11f133db6b146275cde9033b791)
