@@ -2,6 +2,10 @@
 
 This changelog is automatically generated.
 
+## v0.0.9
+
+- Try different sample base url [`d7c0cd0`](../../commit/d7c0cd00a4bbbe0b6bc0cd88527266df3c76b5c4)
+
 ## v0.0.8
 
 - Add samplers and more synths [`59e1a83`](../../commit/59e1a83fddad57b593aee4fc3627fcd98acf652c)
