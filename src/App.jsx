@@ -93,6 +93,31 @@ function App() {
             Reset
           </button>
         </div>
+
+        <div></div>
+        <div class="help">
+          <h1>Help!</h1>
+          <p>
+            Lost? Just click the orange box and you’re off! You’ll figure it
+            out.
+          </p>
+          <p>
+            You can go back and remove a tick, but you must add at least one
+            tick on each track to unlock the next track
+          </p>
+          <p>
+            The sound for each track is picked at random on load, if you’re
+            unhappy with the order of sounds, hit "Reset".
+          </p>
+          <p>
+            Use keys <code>a-y</code> to mute tracks.
+          </p>
+          <p>
+            Save works OK but I wouldn’t trust it with my life. It saves the
+            current state of your composition in the URL, just copy it from the
+            address bar to share it.
+          </p>
+        </div>
       </div>
     </>
   )
