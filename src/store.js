@@ -134,6 +134,7 @@ const toggleMute = (trackId) => {
       track.muted = !track.muted
     })
   )
+  setStore('saved', false)
 }
 
 const setBpm = (newBpm) => {
