@@ -1,9 +1,9 @@
 input[type='checkbox'].onstep {
   background-color: orange;
 }
-input[type='checkbox'].offstep {
+/*input[type='checkbox'].offstep {
   border: 1px solid green;
-}
+}*/
 
 .container {
   margin-top: 1rem;

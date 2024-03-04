@@ -67,6 +67,9 @@ const loop = (time) => {
     Tone.Draw.schedule(() => {
       const steps = store.steps
       setStore('steps', trackId, step)
+      // setTimeout(() => {
+      //   setStore('steps', trackId, -1)
+      // }, 100)
     }, time)
   }
 
@@ -104,7 +107,7 @@ const toggleTick = async (trackId, tickId) => {
       Tone.start()
       Tone.Transport.bpm.value = store.bpm
       Tone.Transport.scheduleRepeat(loop, '16n')
-      await Tone.Transport.start('+0.1')
+      await Tone.Transport.start('+0.05')
       setStore(
         produce((store) => {
           store.initiated = true
