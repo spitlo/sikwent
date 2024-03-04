@@ -241,7 +241,26 @@ am1.engine.sync()
 
 const am2 = {
   name: 'AM 2',
-  engine: new AMSynth({ volume: -6 }).toDestination(),
+  engine: new AMSynth({
+    volume: 0,
+    harmonicity: 3.2,
+    oscillator: {
+      type: 'fatsawtooth',
+    },
+    envelope: {
+      attack: 0,
+      decay: 0.1,
+      sustain: 0.1,
+      release: 0.5,
+    },
+    modulation: {
+      type: 'sine2',
+    },
+    modulationEnvelope: {
+      attack: 0.05,
+      decay: 0.01,
+    },
+  }).toDestination(),
 }
 am2.engine.sync()
 
