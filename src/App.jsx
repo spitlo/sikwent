@@ -7,6 +7,7 @@ import {
   onMount,
   Show,
 } from 'solid-js'
+import { useKeyDownEvent } from '@solid-primitives/keyboard'
 
 import instruments from './instruments'
 import Track from './components/Track'
@@ -26,6 +27,22 @@ function App() {
   const cleanup = () => {
     Tone.Transport.dispose()
   }
+
+  const event = useKeyDownEvent()
+
+  createEffect(() => {
+    const e = event()
+    if (e) {
+      if (e.key) {
+        const charCode = e.key.charCodeAt()
+        if (charCode > 96 && charCode < 123) {
+          // Letters a-z
+          const trackId = charCode - 97
+          actions.toggleMute(trackId)
+        }
+      }
+    }
+  })
 
   onMount(initApp)
   onCleanup(cleanup)
