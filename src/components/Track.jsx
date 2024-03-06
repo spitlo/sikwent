@@ -1,4 +1,5 @@
 import instruments from '../instruments'
+import { actions } from '../store'
 
 import './Track.css'
 
@@ -15,7 +16,14 @@ const Track = (props) => {
         <span class="full">
           {trackLetter}: {instrument.name}: {track.note}
         </span>
-        <span class="tiny">{shortName}</span>
+        <span
+          class="tiny"
+          onClick={() => {
+            actions.toggleMute(track.id)
+          }}
+        >
+          {shortName}
+        </span>
       </div>
       <div class={props.class}>{props.children}</div>
     </>

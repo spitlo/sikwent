@@ -22,6 +22,7 @@
 @media (max-width: 800px) {
   .track-info .tiny {
     display: block;
+    cursor: pointer;
   }
   .track-info .full {
     display: none;
