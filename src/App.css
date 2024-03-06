@@ -49,6 +49,16 @@
   }
 }
 
+@media (max-width: 500px) {
+  .toolbar button,
+  .toolbar input {
+    padding: 8px;
+    font-size: 18px;
+    line-height: 16px;
+    letter-spacing: 2px;
+  }
+}
+
 @font-face {
   font-family: 'Botic';
   src:
