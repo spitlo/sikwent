@@ -2,6 +2,10 @@
 
 This changelog is automatically generated.
 
+## v0.0.13
+
+- Add current version to help text, and 'createdWith' to store [`ac2a12e`](../../commit/ac2a12eec084ce356d12677bcaf1c524ada7c588)
+
 ## v0.0.12
 
 - Force dark mode. Mention notes and scale in help text [`e4d156f`](../../commit/e4d156f77d18e3115165f4e26187be29cb363ade)
