@@ -2,6 +2,10 @@
 
 This changelog is automatically generated.
 
+## v0.0.14
+
+- Track info takes up less space on smaller devices [`3ef4473`](../../commit/3ef4473bdcde4d60805966d943d0d03d3b812e31)
+
 ## v0.0.13
 
 - Add current version to help text, and 'createdWith' to store [`ac2a12e`](../../commit/ac2a12eec084ce356d12677bcaf1c524ada7c588)
