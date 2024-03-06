@@ -2,9 +2,11 @@
 
 /'siːkwənt/ is an experiment in sequencing. The idea is that every new track that is added have one more "tick" than the one before. Ticks are sixteenth notes.
 
-You start with a single track with a single tick (checkbox). To add a track, you must first activate a tick in the current one. As soon as you do, a new track becomes available. Deactivating every tick in a higher track won’t delete the channels below. (But it will/might/should? mute them until the higher track is active again. This could be used for creative muting.)
+You start with a single track with a single tick (checkbox). To add a track, you must first activate a tick in the current one. As soon as you do, a new track becomes available. Deactivating every tick in a higher track won’t delete the channels below.
 
-/'siːkwənt/ is some sort of sibling to [Space](https://spitlo.com/space/) and also uses [Tone.js](https://tonejs.github.io/), but for this I used [Solid](https://docs.solidjs.com/) instead af vanilla JavaScript
+You can mute individual tracks by using keys `a` to `z` on your keyboard. On mobile, tapping the track name should do the same.
+
+/'siːkwənt/ is some sort of sibling to [Space](https://spitlo.com/space/) and also uses [Tone.js](https://tonejs.github.io/), but for this I used [Solid](https://docs.solidjs.com/) instead of vanilla JavaScript
 
 ## To do
 
