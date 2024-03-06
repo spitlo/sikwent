@@ -2,6 +2,11 @@
 
 This changelog is automatically generated.
 
+## v0.0.15
+
+- Show friendly warning on version mismatch for saved compositions [`48d6dbe`](../../commit/48d6dbeb74aa626743bee19e91c75658364973dc)
+- Tiny track info mutes channel on tap [`03cddd8`](../../commit/03cddd8e29e65558f832a90c2ea3a91bc02f6b7f)
+
 ## v0.0.14
 
 - Track info takes up less space on smaller devices [`3ef4473`](../../commit/3ef4473bdcde4d60805966d943d0d03d3b812e31)
