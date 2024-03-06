@@ -25,7 +25,7 @@ function getRandomIntExcept(min, max, forbidden) {
   return getArrayElement(choices)
 }
 
-const version = '__APP_VERSION__'
+const version = __APP_VERSION__
 
 export {
   debug,

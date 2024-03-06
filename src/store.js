@@ -3,7 +3,12 @@ import { createEffect } from 'solid-js'
 import { createStore, produce } from 'solid-js/store'
 
 import instruments from './instruments'
-import { getArrayElement, getRandomInt, getRandomIntExcept } from './utils'
+import {
+  getArrayElement,
+  getRandomInt,
+  getRandomIntExcept,
+  version,
+} from './utils'
 import { load, save, stash, storage } from './storage'
 
 const INSTRUMENT_AMOUNT = instruments.length
@@ -14,6 +19,7 @@ let index = 0
 
 const [store, setStore] = createStore({
   bpm: 85,
+  createdWith: version,
   playing: false,
   initiated: false,
   saved: true,

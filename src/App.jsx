@@ -13,6 +13,7 @@ import instruments from './instruments'
 import Track from './components/Track'
 import { actions, setStore, store, loop } from './store'
 import { load, save, stash, storage } from './storage'
+import { version } from './utils'
 
 import './App.css'
 
@@ -128,7 +129,8 @@ function App() {
           <p>
             The sound for each track is picked at random on load, if you’re
             unhappy with the order of sounds, hit "Reset". Notes are also picked
-            at random, but from the Aeolian Dominant aka Hindu Scale in E.
+            at random, but always from the Aeolian Dominant aka Hindu Scale in
+            E.
           </p>
           <p>
             Use keys <code>a-y</code> to mute tracks.
@@ -138,6 +140,7 @@ function App() {
             current state of your composition in the URL, just copy it from the
             address bar to share it.
           </p>
+          <p>Version: {version}</p>
         </div>
       </div>
     </>
