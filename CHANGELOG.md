@@ -2,6 +2,12 @@
 
 This changelog is automatically generated.
 
+## v0.0.12
+
+- Force dark mode. Mention notes and scale in help text [`e4d156f`](../../commit/e4d156f77d18e3115165f4e26187be29cb363ade)
+- Move keyboard listener to App [`5af9fff`](../../commit/5af9fffc13fad85296df7d49605a62306b552e0e)
+- Muting set composition to unsaved [`b88c6a0`](../../commit/b88c6a0cc807af3c296e176c6d1ae387266863ee)
+
 ## v0.0.11
 
 - Add help text [`e3bf8d5`](../../commit/e3bf8d58e8ad1166b0d3d479167180df9ca90050)
