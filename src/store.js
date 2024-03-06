@@ -7,7 +7,7 @@ import { getArrayElement, getRandomInt, getRandomIntExcept } from './utils'
 import { load, save, stash, storage } from './storage'
 
 const INSTRUMENT_AMOUNT = instruments.length
-const BASE_SCALE = ['E', 'F#', 'G#', 'A', 'B', 'C', 'D']
+const BASE_SCALE = ['E', 'F#', 'G#', 'A', 'B', 'C', 'D'] // Aeolian Dominant scale
 const initialnstrument = getRandomInt(0, instruments.length - 1)
 
 let index = 0

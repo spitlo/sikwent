@@ -32,14 +32,17 @@ function App() {
 
   createEffect(() => {
     const e = event()
-    if (e) {
-      if (e.key) {
-        const charCode = e.key.charCodeAt()
-        if (charCode > 96 && charCode < 123) {
-          // Letters a-z
-          const trackId = charCode - 97
-          actions.toggleMute(trackId)
-        }
+    if (e && e.key) {
+      const charCode = e.key.charCodeAt()
+      if (charCode > 96 && charCode < 123) {
+        // Letters a-z
+        const trackId = charCode - 97
+        actions.toggleMute(trackId)
+      } else if (e.key === 'ArrowUp') {
+        // This triggers an infinite loop, investigate
+        // actions.setBpm(store.bpm + 1)
+      } else if (e.key === 'ArrowDown') {
+        // actions.setBpm(store.bpm - 1)
       }
     }
   })
@@ -124,7 +127,8 @@ function App() {
           </p>
           <p>
             The sound for each track is picked at random on load, if you’re
-            unhappy with the order of sounds, hit "Reset".
+            unhappy with the order of sounds, hit "Reset". Notes are also picked
+            at random, but from the Aeolian Dominant aka Hindu Scale in E.
           </p>
           <p>
             Use keys <code>a-y</code> to mute tracks.
