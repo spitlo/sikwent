@@ -54,9 +54,7 @@ function App() {
   return (
     <>
       <div class="container">
-        <div class="header">
-          Track / {instruments.length - store.tracks.length}
-        </div>
+        <div class="header">TRK/{instruments.length - store.tracks.length}</div>
         <div class="header"></div>
 
         <For each={store.tracks}>

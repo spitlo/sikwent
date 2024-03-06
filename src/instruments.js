@@ -39,12 +39,14 @@ const lowPass = new Filter({
 
 const hihat = {
   name: 'Hi-Hat',
+  shortName: 'HHat',
   engine: new NoiseSynth({ volume: -18, type: 'white' }).toDestination(),
 }
 hihat.engine.sync()
 
 const snare = {
   name: 'Snare',
+  shortName: 'Snre',
   engine: new NoiseSynth({
     volume: -4,
     noise: {
@@ -72,6 +74,7 @@ kick.engine.sync()
 
 const tom1 = {
   name: 'Tom Lo',
+  shortName: 'Tom1',
   octave: 3,
   engine: new MembraneSynth({
     volume: -3,
@@ -83,6 +86,7 @@ tom1.engine.sync()
 
 const tom2 = {
   name: 'Tom Mid',
+  shortName: 'Tom2',
   engine: new MembraneSynth({
     volume: -3,
     pitchDecay: 0.008,
@@ -93,6 +97,7 @@ tom2.engine.sync()
 
 const mono1 = {
   name: 'Mono 1',
+  shortName: 'Mon1',
   engine: new MonoSynth({
     volume: -8,
     oscillator: {
@@ -118,6 +123,7 @@ mono1.engine.sync()
 
 const mono2 = {
   name: 'Mono 2',
+  shortName: 'Mon2',
   engine: new MonoSynth({
     volume: -8,
     oscillator: {
@@ -185,6 +191,7 @@ fm2.engine.sync()
 
 const synth1 = {
   name: 'Synth 1',
+  shortName: 'Snt1',
   octave: 1,
   engine: new Synth({
     oscillator: {
@@ -207,6 +214,7 @@ synth1.engine.sync()
 
 const synth2 = {
   name: 'Synth 2',
+  shortName: 'Snt2',
   octave: 2,
   engine: new Synth({
     oscillator: {
@@ -229,6 +237,7 @@ synth2.engine.sync()
 
 const synth3 = {
   name: 'Synth 3',
+  shortName: 'Snt3',
   octave: 3,
   engine: new Synth({ volume: -6 }).toDestination(),
 }
@@ -236,12 +245,14 @@ synth3.engine.sync()
 
 const pluck1 = {
   name: 'Pluck 1',
+  shortName: 'Plk1',
   engine: new PluckSynth({ volume: -6 }).toDestination(),
 }
 pluck1.engine.sync()
 
 const pluck2 = {
   name: 'Pluck 2',
+  shortName: 'Plk2',
   engine: new PluckSynth({ volume: -6 }).toDestination(),
 }
 pluck2.engine.sync()
@@ -279,6 +290,7 @@ am2.engine.sync()
 
 const metal1 = {
   name: 'Metal 1',
+  shortName: 'Mtl1',
   engine: new MetalSynth({
     harmonicity: 12,
     resonance: 1200,
@@ -293,6 +305,7 @@ metal1.engine.sync()
 
 const metal2 = {
   name: 'Metal 2',
+  shortName: 'Mtl1',
   engine: new MetalSynth({
     harmonicity: 8,
     resonance: 300,
@@ -353,6 +366,7 @@ fat.engine.sync()
 
 const sampler1 = {
   name: 'Sampler 1',
+  shortName: 'Smp1',
   engine: new Sampler({
     urls: {
       C4: 'uh.mp3',
@@ -364,6 +378,7 @@ sampler1.engine.sync()
 
 const sampler2 = {
   name: 'Sampler 2',
+  shortName: 'Smp2',
   engine: new Sampler({
     urls: {
       C4: 'yeah.mp3',

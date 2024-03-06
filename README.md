@@ -9,6 +9,7 @@ You start with a single track with a single tick (checkbox). To add a track, you
 ## To do
 
 - [ ] Styling
+- [ ] Kill all notes on stop
 - [x] Tweak all synths
 - [x] Add two sampler channels
 - [x] Everything

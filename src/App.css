@@ -21,23 +21,6 @@
   text-decoration: underline;
 }
 
-.container .track-info {
-  color: #d4c6b6;
-  text-transform: uppercase;
-}
-
-.track.muted {
-  opacity: 0.1;
-}
-
-input[type='checkbox'].onstep {
-  background-color: orange;
-}
-
-.track.muted input[type='checkbox'].onstep {
-  background-color: black;
-}
-
 .toolbar {
   position: relative;
   margin-top: 1rem;
@@ -54,6 +37,16 @@ input[type='checkbox'].onstep {
   margin-bottom: 0;
   text-transform: uppercase;
   letter-spacing: 4px;
+}
+
+@media (max-width: 800px) {
+  .toolbar button,
+  .toolbar input {
+    padding: 8px;
+    font-size: 22px;
+    line-height: 20px;
+    letter-spacing: 2px;
+  }
 }
 
 .help {
