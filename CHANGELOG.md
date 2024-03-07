@@ -2,6 +2,10 @@
 
 This changelog is automatically generated.
 
+## v0.0.17
+
+- Reset steps on save. Cleanup [`1da0f19`](../../commit/1da0f19b2d9fe57174a5b822c505175abbffa367)
+
 ## v0.0.16
 
 - Add a Modal component and use it on save [`114b6f7`](../../commit/114b6f71a113bdebdf4a061d7e40c7f9229683d0)
