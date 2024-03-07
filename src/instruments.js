@@ -3,8 +3,8 @@ import {
   AutoFilter,
   Destination,
   DuoSynth,
-  Filter,
   FMSynth,
+  Filter,
   MembraneSynth,
   MetalSynth,
   MonoSynth,
@@ -40,9 +40,8 @@ const lowPass = new Filter({
 const hihat = {
   name: 'Hi-Hat',
   shortName: 'HHat',
-  engine: new NoiseSynth({ volume: -18, type: 'white' }).toDestination(),
+  engine: new NoiseSynth({ volume: -18, type: 'white' }).sync().toDestination(),
 }
-hihat.engine.sync()
 
 const snare = {
   name: 'Snare',
@@ -61,16 +60,15 @@ const snare = {
     },
   })
     .connect(lowPass)
+    .sync()
     .toDestination(),
 }
-snare.engine.sync()
 
 const kick = {
   name: 'Kick',
   octave: 2,
-  engine: new MembraneSynth({ volume: -6 }).toDestination(),
+  engine: new MembraneSynth({ volume: -6 }).sync().toDestination(),
 }
-kick.engine.sync()
 
 const tom1 = {
   name: 'Tom Lo',
@@ -80,9 +78,10 @@ const tom1 = {
     volume: -3,
     pitchDecay: 0.008,
     envelope: { attack: 0.01, decay: 0.5, sustain: 0 },
-  }).toDestination(),
+  })
+    .sync()
+    .toDestination(),
 }
-tom1.engine.sync()
 
 const tom2 = {
   name: 'Tom Mid',
@@ -91,9 +90,10 @@ const tom2 = {
     volume: -3,
     pitchDecay: 0.008,
     envelope: { attack: 0.01, decay: 0.5, sustain: 0 },
-  }).toDestination(),
+  })
+    .sync()
+    .toDestination(),
 }
-tom2.engine.sync()
 
 const mono1 = {
   name: 'Mono 1',
@@ -117,9 +117,10 @@ const mono1 = {
       baseFrequency: 300,
       octaves: 4,
     },
-  }).toDestination(),
+  })
+    .sync()
+    .toDestination(),
 }
-mono1.engine.sync()
 
 const mono2 = {
   name: 'Mono 2',
@@ -143,9 +144,10 @@ const mono2 = {
       baseFrequency: 300,
       octaves: 4,
     },
-  }).toDestination(),
+  })
+    .sync()
+    .toDestination(),
 }
-mono2.engine.sync()
 
 const fm1 = {
   name: 'FM 1',
@@ -164,9 +166,10 @@ const fm1 = {
       attack: 0.2,
       decay: 0.01,
     },
-  }).toDestination(),
+  })
+    .sync()
+    .toDestination(),
 }
-fm1.engine.sync()
 
 const fm2 = {
   name: 'FM 2',
@@ -185,9 +188,10 @@ const fm2 = {
       attack: 0.2,
       decay: 0.1,
     },
-  }).toDestination(),
+  })
+    .sync()
+    .toDestination(),
 }
-fm2.engine.sync()
 
 const synth1 = {
   name: 'Synth 1',
@@ -208,9 +212,10 @@ const synth1 = {
     },
     portamento: 0,
     volume: -6,
-  }).toDestination(),
+  })
+    .sync()
+    .toDestination(),
 }
-synth1.engine.sync()
 
 const synth2 = {
   name: 'Synth 2',
@@ -231,37 +236,34 @@ const synth2 = {
     },
     portamento: 0.05,
     volume: -6,
-  }).toDestination(),
+  })
+    .sync()
+    .toDestination(),
 }
-synth2.engine.sync()
 
 const synth3 = {
   name: 'Synth 3',
   shortName: 'Snt3',
   octave: 3,
-  engine: new Synth({ volume: -6 }).toDestination(),
+  engine: new Synth({ volume: -6 }).sync().toDestination(),
 }
-synth3.engine.sync()
 
 const pluck1 = {
   name: 'Pluck 1',
   shortName: 'Plk1',
-  engine: new PluckSynth({ volume: -6 }).toDestination(),
+  engine: new PluckSynth({ volume: -6 }).sync().toDestination(),
 }
-pluck1.engine.sync()
 
 const pluck2 = {
   name: 'Pluck 2',
   shortName: 'Plk2',
-  engine: new PluckSynth({ volume: -6 }).toDestination(),
+  engine: new PluckSynth({ volume: -6 }).sync().toDestination(),
 }
-pluck2.engine.sync()
 
 const am1 = {
   name: 'AM 1',
-  engine: new AMSynth({ volume: -3 }).toDestination(),
+  engine: new AMSynth({ volume: -3 }).sync().toDestination(),
 }
-am1.engine.sync()
 
 const am2 = {
   name: 'AM 2',
@@ -284,9 +286,10 @@ const am2 = {
       attack: 0.05,
       decay: 0.01,
     },
-  }).toDestination(),
+  })
+    .sync()
+    .toDestination(),
 }
-am2.engine.sync()
 
 const metal1 = {
   name: 'Metal 1',
@@ -299,9 +302,10 @@ const metal1 = {
       decay: 0.2,
     },
     volume: -12,
-  }).toDestination(),
+  })
+    .sync()
+    .toDestination(),
 }
-metal1.engine.sync()
 
 const metal2 = {
   name: 'Metal 2',
@@ -314,9 +318,10 @@ const metal2 = {
       decay: 0.5,
     },
     volume: -14,
-  }).toDestination(),
+  })
+    .sync()
+    .toDestination(),
 }
-metal2.engine.sync()
 
 const fun1 = {
   name: 'Fun 1',
@@ -327,9 +332,10 @@ const fun1 = {
       harmonicity: 4,
       modulationType: 'amtriangle',
     },
-  }).toDestination(),
+  })
+    .sync()
+    .toDestination(),
 }
-fun1.engine.sync()
 
 const fun2 = {
   name: 'Fun 2',
@@ -340,9 +346,10 @@ const fun2 = {
       harmonicity: 0.5,
       modulationType: 'fatsawtooth',
     },
-  }).toDestination(),
+  })
+    .sync()
+    .toDestination(),
 }
-fun2.engine.sync()
 
 const fat = {
   name: 'Fat',
@@ -360,9 +367,10 @@ const fat = {
       release: 0.4,
       attackCurve: 'exponential',
     },
-  }).toDestination(),
+  })
+    .sync()
+    .toDestination(),
 }
-fat.engine.sync()
 
 const sampler1 = {
   name: 'Sampler 1',
@@ -372,9 +380,10 @@ const sampler1 = {
       C4: 'uh.mp3',
     },
     baseUrl: SAMPLE_BASE_URL,
-  }).toDestination(),
+  })
+    .sync()
+    .toDestination(),
 }
-sampler1.engine.sync()
 
 const sampler2 = {
   name: 'Sampler 2',
@@ -384,9 +393,10 @@ const sampler2 = {
       C4: 'yeah.mp3',
     },
     baseUrl: SAMPLE_BASE_URL,
-  }).toDestination(),
+  })
+    .sync()
+    .toDestination(),
 }
-sampler2.engine.sync()
 
 const duo1 = {
   name: 'Duo 1',
@@ -396,9 +406,10 @@ const duo1 = {
     portamento: 0.5,
     vibratoAmount: 1,
     vibratoRate: 1,
-  }).chain(duoFilter, duoReverb, Destination),
+  })
+    .sync()
+    .chain(duoFilter, duoReverb, Destination),
 }
-duo1.engine.sync()
 
 const duo2 = {
   name: 'Duo 2',
@@ -408,9 +419,10 @@ const duo2 = {
     portamento: 0,
     vibratoAmount: 0.5,
     vibratoRate: 0.5,
-  }).chain(duoFilter, duoReverb, Destination),
+  })
+    .sync()
+    .chain(duoFilter, duoReverb, Destination),
 }
-duo2.engine.sync()
 
 const instruments = [
   am1,

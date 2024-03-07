@@ -27,7 +27,6 @@ function App() {
   const event = useKeyDownEvent()
 
   const [SaveModal, toggleSaveModal] = createModal()
-  const [OtherModal, toggleOtherModal] = createModal()
 
   createEffect(() => {
     const e = event()
@@ -141,10 +140,6 @@ function App() {
           again.
         </p>
       </SaveModal>
-
-      <OtherModal>
-        <p>Kukjan!</p>
-      </OtherModal>
     </>
   )
 }

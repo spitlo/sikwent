@@ -3,16 +3,16 @@ import { createEffect } from 'solid-js'
 import { createStore, produce } from 'solid-js/store'
 
 import instruments from './instruments'
+import { load, save, stash, storage } from './storage'
 import {
   getArrayElement,
   getRandomInt,
   getRandomIntExcept,
   version,
 } from './utils'
-import { load, save, stash, storage } from './storage'
 
-const INSTRUMENT_AMOUNT = instruments.length
 const BASE_SCALE = ['E', 'F#', 'G#', 'A', 'B', 'C', 'D'] // Aeolian Dominant scale
+const INSTRUMENT_AMOUNT = instruments.length
 const initialnstrument = getRandomInt(0, instruments.length - 1)
 
 let index = 0
@@ -106,7 +106,7 @@ const toggleTick = async (trackId, tickId) => {
       Tone.start()
       Tone.Transport.bpm.value = store.bpm
       Tone.Transport.scheduleRepeat(loop, '16n')
-      await Tone.Transport.start('+0.05')
+      await Tone.Transport.start()
       setStore(
         produce((store) => {
           store.initiated = true
@@ -155,11 +155,13 @@ const setBpm = (newBpm) => {
 
 const saveStore = async () => {
   await Tone.Transport.stop()
+  const steps = new Array(store.steps.length).fill(0)
   setStore(
     produce((store) => {
       store.initiated = false
       store.playing = false
       store.saved = true
+      store.steps = steps
     })
   )
   stash(store)
@@ -170,7 +172,7 @@ const initAndPlay = async () => {
   await Tone.start()
   Tone.Transport.bpm.value = store.bpm
   Tone.Transport.scheduleRepeat(loop, '16n')
-  await Tone.Transport.start('+0.1')
+  await Tone.Transport.start()
 
   setStore(
     produce((store) => {
