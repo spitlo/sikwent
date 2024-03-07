@@ -2,6 +2,11 @@
 
 This changelog is automatically generated.
 
+## v0.0.16
+
+- Add a Modal component and use it on save [`114b6f7`](../../commit/114b6f71a113bdebdf4a061d7e40c7f9229683d0)
+- Decrease button font size on smaller screens [`32599d7`](../../commit/32599d7fea7ca67ec836cb9ec2c873bdb92d4916)
+
 ## v0.0.15
 
 - Show friendly warning on version mismatch for saved compositions [`48d6dbe`](../../commit/48d6dbeb74aa626743bee19e91c75658364973dc)
