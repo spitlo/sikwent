@@ -1,10 +1,12 @@
 import * as Tone from 'tone'
 import { createEffect, For, onCleanup, onMount } from 'solid-js'
 import { useKeyDownEvent } from '@solid-primitives/keyboard'
+import { writeClipboard } from '@solid-primitives/clipboard'
 
-import instruments from './instruments'
 import Help from './components/Help'
 import Track from './components/Track'
+import createModal from './components/Modal'
+import instruments from './instruments'
 import { actions, setStore, store } from './store'
 import { load, storage } from './storage'
 
@@ -23,6 +25,9 @@ function App() {
   }
 
   const event = useKeyDownEvent()
+
+  const [SaveModal, toggleSaveModal] = createModal()
+  const [OtherModal, toggleOtherModal] = createModal()
 
   createEffect(() => {
     const e = event()
@@ -83,7 +88,13 @@ function App() {
 
         <div></div>
         <div class="grid toolbar">
-          <button onClick={actions.saveStore} disabled={store.saved}>
+          <button
+            onClick={(e) => {
+              actions.saveStore()
+              toggleSaveModal()
+            }}
+            disabled={store.saved}
+          >
             Save
           </button>
           <button
@@ -109,6 +120,31 @@ function App() {
         <div></div>
         <Help />
       </div>
+
+      <SaveModal
+        title="Saved!"
+        secondaryButton={{
+          text: 'Copy',
+          onClick: () => {
+            writeClipboard(location.href)
+            toggleSaveModal()
+          },
+        }}
+      >
+        <p>
+          This project is now saved in the URL. You can copy the URL and share
+          with a friend, or keep it for yourself. Click "Copy" to put the URL in
+          your clipboard.
+        </p>
+        <p>
+          To update the URL after you have done some changes, just hit "Save"
+          again.
+        </p>
+      </SaveModal>
+
+      <OtherModal>
+        <p>Kukjan!</p>
+      </OtherModal>
     </>
   )
 }
