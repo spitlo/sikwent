@@ -12,18 +12,16 @@ const Track = (props) => {
 
   return (
     <>
-      <div class="track-info">
+      <div
+        class="track-info"
+        onClick={() => {
+          actions.toggleMute(track.id)
+        }}
+      >
         <span class="full">
           {trackLetter}: {instrument.name}: {track.note}
         </span>
-        <span
-          class="tiny"
-          onClick={() => {
-            actions.toggleMute(track.id)
-          }}
-        >
-          {shortName}
-        </span>
+        <span class="tiny">{shortName}</span>
       </div>
       <div class={props.class}>{props.children}</div>
     </>

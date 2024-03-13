@@ -1,6 +1,7 @@
 .track-info {
   color: #d4c6b6;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 .track-info .tiny {
@@ -22,7 +23,6 @@
 @media (max-width: 800px) {
   .track-info .tiny {
     display: block;
-    cursor: pointer;
   }
   .track-info .full {
     display: none;
