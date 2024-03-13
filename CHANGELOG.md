@@ -2,6 +2,10 @@
 
 This changelog is automatically generated.
 
+## v0.0.18
+
+- Track name click mutes on larger screens as well [`25b14e4`](../../commit/25b14e45e85d43e11734c07209872d0adb8666b8)
+
 ## v0.0.17
 
 - Reset steps on save. Cleanup [`1da0f19`](../../commit/1da0f19b2d9fe57174a5b822c505175abbffa367)
