@@ -29,5 +29,7 @@ You can mute individual tracks by using keys `a` to `z` on your keyboard. Or by 
 <https://tonejs.github.io/> /
 <https://tonejs.github.io/examples/> /
 <https://docs.solidjs.com/> /
+<https://www.solidjs.com/tutorial/> /
+<https://primitives.solidjs.community/> /
 <https://kobalte.dev/docs/core/overview/introduction> /
 <https://picocss.com/> /
