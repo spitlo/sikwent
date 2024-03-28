@@ -11,6 +11,7 @@ You can mute individual tracks by using keys `a` to `z` on your keyboard. Or by 
 ## To do
 
 - [ ] Styling
+- [ ] What if the first checkbox is huge? And centered? Then when track two appears, checkboxes get smaller... and smaller.
 - [ ] Kill all notes on stop
 - [ ] Shift + [a-z] "fills" channel? Or inverts pattern?
 - [ ] Or shift clicking fills that column, alt clicking fills row
