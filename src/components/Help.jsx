@@ -48,9 +48,11 @@ const Help = () => {
         with the order of sounds, hit "Reset". Notes are also picked at random,
         but always from the Aeolian Dominant aka Hindu Scale in E.
       </p>
+      <p>To the right of each track, its note is indicated.</p>
       <p>
-        Use keys <code>a</code>-<code>y</code> to mute tracks.
+        Use keys <code>a</code>-<code>z</code> to mute tracks.
       </p>
+      <p>To the left of each track, its mute key is indicated.</p>
       <p>
         Save works OK but I wouldn’t trust it with my life. It saves the current
         state of your composition in the URL, just copy it from the address bar
