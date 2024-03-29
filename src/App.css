@@ -109,6 +109,7 @@ body {
 
 .track input[type='checkbox'] {
   border-radius: 0.1em;
+  border-width: 0.05em;
   font: inherit;
   height: 1em;
   margin-inline-end: 0.2em;
