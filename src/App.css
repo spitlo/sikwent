@@ -7,10 +7,10 @@ body {
 .container {
   margin-top: 1rem;
   display: grid;
-  grid-template-columns: 1.7fr 8.3fr;
+  grid-template-columns: 1fr;
   grid-column-gap: 8px;
   grid-row-gap: 8px;
-  justify-items: stretch;
+  justify-items: center;
   align-items: stretch;
 }
 
@@ -24,12 +24,168 @@ body {
   text-decoration: underline;
 }
 
+.track-container {
+  align-items: stretch;
+  display: grid;
+  font-size: 30px;
+  grid-column-gap: 6px;
+  grid-row-gap: 12px;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  --pico-icon-checkbox: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='rgb(218, 116, 23)'%3E%3Cellipse ry='12' rx='12' cy='12' cx='12' /%3E%3C/svg%3E");
+}
+
+.track {
+  position: relative;
+}
+
+.track::before,
+.track::after {
+  height: 1em;
+  opacity: 0.4;
+  padding: 0.1em 0 0 0.15em;
+  position: absolute;
+  text-transform: uppercase;
+  white-space: nowrap;
+  width: 1em;
+}
+
+.track-container.count-1 .track::before,
+.track-container.count-1 .track::after,
+.track-container.count-2 .track::before,
+.track-container.count-2 .track::after {
+  padding-top: 0.4em;
+}
+
+.track-container.count-3 .track::before,
+.track-container.count-3 .track::after,
+.track-container.count-4 .track::before,
+.track-container.count-4 .track::after {
+  padding-top: 0.35em;
+}
+
+.track-container.count-5 .track::before,
+.track-container.count-5 .track::after,
+.track-container.count-6 .track::before,
+.track-container.count-6 .track::after {
+  padding-top: 0.3em;
+}
+
+.track-container.count-7 .track::before,
+.track-container.count-7 .track::after,
+.track-container.count-8 .track::before,
+.track-container.count-8 .track::after {
+  padding-top: 0.25em;
+}
+
+.track-container.count-9 .track::before,
+.track-container.count-9 .track::after,
+.track-container.count-10 .track::before,
+.track-container.count-10 .track::after {
+  padding-top: 0.2em;
+}
+
+.track-container.count-11 .track::before,
+.track-container.count-11 .track::after,
+.track-container.count-12 .track::before,
+.track-container.count-12 .track::after {
+  padding-top: 0.15em;
+}
+
+.track::before {
+  content: attr(data-track-letter);
+  left: -1em;
+}
+
+.track::after {
+  content: attr(data-track-note);
+  right: -1em;
+}
+
+.track:hover::before,
+.track:hover::after {
+  opacity: 1;
+}
+
+.track input[type='checkbox'] {
+  border-radius: 0.1em;
+  font: inherit;
+  height: 1em;
+  margin-inline-end: 0.2em;
+  margin-top: 0;
+  transition: all 200ms ease;
+  width: 1em;
+}
+
+.track input[type='checkbox'].onstep {
+  border-color: orange;
+}
+
+.track-container {
+  grid-row-gap: 0.2em;
+}
+
+.track-container.count-1 {
+  font-size: 320px;
+}
+.track-container.count-2 {
+  font-size: 160px;
+}
+.track-container.count-3 {
+  font-size: 120px;
+}
+.track-container.count-4 {
+  font-size: 100px;
+}
+.track-container.count-5 {
+  font-size: 90px;
+}
+.track-container.count-6 {
+  font-size: 80px;
+}
+.track-container.count-7 {
+  font-size: 70px;
+}
+.track-container.count-8 {
+  font-size: 60px;
+}
+.track-container.count-9 {
+  font-size: 52px;
+}
+.track-container.count-10 {
+  font-size: 46px;
+}
+.track-container.count-11 {
+  font-size: 42px;
+}
+.track-container.count-12 {
+  font-size: 39px;
+}
+.track-container.count-13 {
+  font-size: 36px;
+}
+.track-container.count-14 {
+  font-size: 33px;
+}
+
+.track.muted {
+  opacity: 0.3;
+}
+
+[data-tooltip]:not(a, button, input) {
+  border-bottom: none;
+}
+[data-tooltip]::before {
+  font-size: 28px;
+  text-transform: uppercase;
+}
+
 .toolbar {
   position: relative;
-  margin-top: 1rem;
+  margin-top: 1.2rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-column-gap: 8px;
+  grid-column-gap: 0.3em;
 }
 
 .toolbar button,

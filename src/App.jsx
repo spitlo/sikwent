@@ -4,7 +4,6 @@ import { useKeyDownEvent } from '@solid-primitives/keyboard'
 import { writeClipboard } from '@solid-primitives/clipboard'
 
 import Help from './components/Help'
-import Track from './components/Track'
 import createModal from './components/Modal'
 import instruments from './instruments'
 import { actions, setStore, store } from './store'
@@ -51,41 +50,46 @@ function App() {
   return (
     <>
       <div class="container">
-        <div class="header">TRK/{instruments.length - store.tracks.length}</div>
-        <div class="header"></div>
+        <div class={`track-container count-${store.tracks.length}`}>
+          <For each={store.tracks}>
+            {(track, trackIndex) => {
+              const { id, instrument, ticks } = track
+              const trackInstrument = instruments[instrument] || {
+                name: 'Missing',
+              }
+              const trackLetter = String.fromCharCode(id + 97)
+              const shortName =
+                instrument.shortName || trackInstrument.name.replace(' ', '')
+              return (
+                <div
+                  class={`track ${track.muted ? 'muted' : ''}`}
+                  data-track-letter={trackLetter}
+                  data-track-note={track.note}
+                >
+                  <For each={ticks}>
+                    {(tick, tickIndex) => {
+                      return (
+                        <input
+                          type="checkbox"
+                          checked={tick}
+                          onChange={() =>
+                            actions.toggleTick(track.id, tickIndex())
+                          }
+                          class={`${
+                            store.steps[trackIndex()] === tickIndex()
+                              ? 'onstep'
+                              : 'offstep'
+                          }`}
+                        />
+                      )
+                    }}
+                  </For>
+                </div>
+              )
+            }}
+          </For>
+        </div>
 
-        <For each={store.tracks}>
-          {(track, trackIndex) => {
-            const { id, ticks } = track
-            return (
-              <Track
-                class={`track ${track.muted ? 'muted' : ''}`}
-                track={track}
-              >
-                <For each={ticks}>
-                  {(tick, tickIndex) => {
-                    return (
-                      <input
-                        type="checkbox"
-                        checked={tick}
-                        onChange={() =>
-                          actions.toggleTick(track.id, tickIndex())
-                        }
-                        class={`${
-                          store.steps[trackIndex()] === tickIndex()
-                            ? 'onstep'
-                            : 'offstep'
-                        }`}
-                      />
-                    )
-                  }}
-                </For>
-              </Track>
-            )
-          }}
-        </For>
-
-        <div></div>
         <div class="grid toolbar">
           <button
             onClick={(e) => {

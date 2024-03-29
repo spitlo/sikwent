@@ -351,6 +351,20 @@ const fun2 = {
     .toDestination(),
 }
 
+const fun3 = {
+  name: 'Fun 3',
+  engine: new Synth({
+    volume: -4,
+    oscillator: {
+      type: 'amtriangle',
+      harmonicity: 18,
+      modulationType: 'sine',
+    },
+  })
+    .sync()
+    .toDestination(),
+}
+
 const fat = {
   name: 'Fat',
   octave: 2,
@@ -434,6 +448,7 @@ const instruments = [
   fm2,
   fun1,
   fun2,
+  fun3,
   hihat,
   kick,
   metal1,

@@ -38,9 +38,7 @@ const Help = () => {
   return (
     <div class="help">
       <h1>Help!</h1>
-      <p>
-        Lost? Just click the orange box and you’re off! You’ll figure it out.
-      </p>
+      <p>Lost? Just click the big box and you’re off! You’ll figure it out.</p>
       <p>
         You can go back and remove a tick, but you must add at least one tick on
         each track to unlock the next track
@@ -51,7 +49,7 @@ const Help = () => {
         but always from the Aeolian Dominant aka Hindu Scale in E.
       </p>
       <p>
-        Use keys <code>a-y</code> to mute tracks.
+        Use keys <code>a</code>-<code>y</code> to mute tracks.
       </p>
       <p>
         Save works OK but I wouldn’t trust it with my life. It saves the current
