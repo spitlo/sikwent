@@ -2,6 +2,13 @@
 
 This changelog is automatically generated.
 
+## v0.0.19
+
+- Update help text [`85fefbe`](../../commit/85fefbe3acdd134aef8ac7900e05ac33fc04531b)
+- Start with a giant centered checkbox [`d32d3f3`](../../commit/d32d3f3541e37c7ca1c699ab3a97ac584d108b05)
+- Add todo item [`7933fa3`](../../commit/7933fa3a6c8e6d6e4d2e36c8c1ab5ef580899e11)
+- Add link to Solid tutorial [`b14f7b4`](../../commit/b14f7b442bfabad61b95b6d7e767d82bc8a40cbd)
+
 ## v0.0.18
 
 - Track name click mutes on larger screens as well [`25b14e4`](../../commit/25b14e45e85d43e11734c07209872d0adb8666b8)
