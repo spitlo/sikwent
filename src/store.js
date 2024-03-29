@@ -31,7 +31,7 @@ const [store, setStore] = createStore({
       instrument: initialnstrument,
       ticks: [0],
       muted: false,
-      note: getArrayElement(BASE_SCALE),
+      note: getArrayElement(['B', 'C', 'D', 'E']),
     },
   ],
 })
