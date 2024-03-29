@@ -2,6 +2,10 @@
 
 This changelog is automatically generated.
 
+## v0.1.0
+
+- Add shadow to button text [`89a70c4`](../../commit/89a70c43f78d2aff5cfc99b53c4699cb9b1a238e)
+
 ## v0.0.20
 
 - Never use a raised note as starter note [`1cde9c2`](../../commit/1cde9c2acb02b149adb1a64222fdbf44cb4f397b)
