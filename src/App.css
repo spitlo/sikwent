@@ -201,6 +201,7 @@ body {
   margin-bottom: 0;
   text-transform: uppercase;
   letter-spacing: 4px;
+  text-shadow: black 3px 3px;
 }
 
 @media (max-width: 800px) {
