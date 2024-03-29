@@ -2,6 +2,12 @@
 
 This changelog is automatically generated.
 
+## v0.0.20
+
+- Never use a raised note as starter note [`1cde9c2`](../../commit/1cde9c2acb02b149adb1a64222fdbf44cb4f397b)
+- Smaller right margin for huge checkbox [`80311d9`](../../commit/80311d96be6b86982ba5ebdca1b82bc833f8041c)
+- Size checkbox border based dynamically [`2b5c7ab`](../../commit/2b5c7ab1b4c827c2ef74c0584526ee650a41eca3)
+
 ## v0.0.19
 
 - Update help text [`85fefbe`](../../commit/85fefbe3acdd134aef8ac7900e05ac33fc04531b)
