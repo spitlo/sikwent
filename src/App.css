@@ -118,6 +118,10 @@ body {
   width: 1em;
 }
 
+.track-container.count-1 input[type='checkbox'] {
+  margin-inline-end: 0.1em;
+}
+
 .track input[type='checkbox'].onstep {
   border-color: orange;
 }
