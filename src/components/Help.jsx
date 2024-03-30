@@ -72,6 +72,52 @@ const Help = () => {
 
       <hr />
 
+      <details>
+        <summary>Credits</summary>
+        <p>
+          Fonts by{' '}
+          <a
+            href="https://github.com/pixeldroid/fonts"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            pixeldroid
+          </a>
+        </p>
+        <p>
+          Sounds by{' '}
+          <a
+            href="https://tonejs.github.io/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Tone.js
+          </a>
+        </p>
+        <p>
+          Looks by{' '}
+          <a
+            href="https://picocss.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Pico CSS
+          </a>
+        </p>
+        <p>
+          Reactivity by{' '}
+          <a
+            href="https://www.solidjs.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Solid
+          </a>
+        </p>
+      </details>
+
+      <hr />
+
       <p>Version: {version}</p>
       <Show when={showVersionWarning()}>
         <p class="warning">
