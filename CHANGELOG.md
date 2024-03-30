@@ -2,6 +2,10 @@
 
 This changelog is automatically generated.
 
+## v0.1.1
+
+- Lower default BPM. Enable changin BPM with +/-. Hide help text by default [`d933112`](../../commit/d933112574997e1810d6037c3437d11ab77d255e)
+
 ## v0.1.0
 
 - Add shadow to button text [`89a70c4`](../../commit/89a70c43f78d2aff5cfc99b53c4699cb9b1a238e)
