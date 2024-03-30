@@ -2,6 +2,12 @@
 
 This changelog is automatically generated.
 
+## v0.1.2
+
+- Add docs to .prettierignore [`598df31`](../../commit/598df31db4a73b7354d2ffb6f44608e8e157fc20)
+- Add .ignore file for ag [`c34769d`](../../commit/c34769d6d96efc0c0e5e0479f2cffa2717acac39)
+- Add credits [`b958181`](../../commit/b9581819cc5233b15591e2053544f293bcb75910)
+
 ## v0.1.1
 
 - Lower default BPM. Enable changin BPM with +/-. Hide help text by default [`d933112`](../../commit/d933112574997e1810d6037c3437d11ab77d255e)
