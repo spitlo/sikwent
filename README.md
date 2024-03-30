@@ -12,17 +12,17 @@ You can mute individual tracks by using keys `a` to `z` on your keyboard. Or by 
 
 - [ ] Delay synth initialization?
 - [ ] Kill all notes on stop
-- [ ] Styling
 - [x] Add one more engine
 - [x] Add two sampler channels
 - [x] Everything
 - [x] FIX LAG!
 - [x] Fix saving/loading
+- [x] Styling
 - [x] Tweak all synths
 - [x] What if the first checkbox is huge? And centered? Then when track two appears, checkboxes get smaller... and smaller.
 - [x] ~~Learn Tailwind~~ or throw it out!
-- [x] ~~Shift clicking fills that column, alt clicking fills row?~~
 - [x] ~~Shift + [a-z] "fills" channel? Or inverts pattern?~~
+- [x] ~~Shift clicking fills that column, alt clicking fills row?~~
 - [x] ~~Start using Kobalte?~~
 
 ## Sources

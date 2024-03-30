@@ -18,7 +18,7 @@ const initialnstrument = getRandomInt(0, instruments.length - 1)
 let index = 0
 
 const [store, setStore] = createStore({
-  bpm: 85,
+  bpm: 70,
   createdWith: version,
   playing: false,
   initiated: false,
@@ -31,7 +31,7 @@ const [store, setStore] = createStore({
       instrument: initialnstrument,
       ticks: [0],
       muted: false,
-      note: getArrayElement(['B', 'C', 'D', 'E']),
+      note: getArrayElement(BASE_SCALE.filter((el) => !el.includes('#'))),
     },
   ],
 })
@@ -99,14 +99,14 @@ const addTrack = () => {
   )
 }
 
-const toggleTick = async (trackId, tickId) => {
+const toggleTick = (trackId, tickId) => {
   if (trackId === 0) {
     // Start playing when first checkbox is checked
     if (!store.initiated) {
       Tone.start()
       Tone.Transport.bpm.value = store.bpm
       Tone.Transport.scheduleRepeat(loop, '16n')
-      await Tone.Transport.start()
+      Tone.Transport.start()
       setStore(
         produce((store) => {
           store.initiated = true
@@ -153,8 +153,8 @@ const setBpm = (newBpm) => {
   )
 }
 
-const saveStore = async () => {
-  await Tone.Transport.stop()
+const saveStore = () => {
+  Tone.Transport.stop()
   const steps = new Array(store.steps.length).fill(0)
   setStore(
     produce((store) => {
@@ -168,11 +168,11 @@ const saveStore = async () => {
   save()
 }
 
-const initAndPlay = async () => {
-  await Tone.start()
+const initAndPlay = () => {
+  Tone.start()
   Tone.Transport.bpm.value = store.bpm
   Tone.Transport.scheduleRepeat(loop, '16n')
-  await Tone.Transport.start()
+  Tone.Transport.start()
 
   setStore(
     produce((store) => {

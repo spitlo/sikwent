@@ -1,5 +1,5 @@
 import * as Tone from 'tone'
-import { createEffect, For, onCleanup, onMount } from 'solid-js'
+import { createEffect, For, onCleanup, onMount, untrack } from 'solid-js'
 import { useKeyDownEvent } from '@solid-primitives/keyboard'
 import { writeClipboard } from '@solid-primitives/clipboard'
 
@@ -35,11 +35,12 @@ function App() {
         // Letters a-z
         const trackId = charCode - 97
         actions.toggleMute(trackId)
-      } else if (e.key === 'ArrowUp') {
-        // This triggers an infinite loop, investigate
-        // actions.setBpm(store.bpm + 1)
-      } else if (e.key === 'ArrowDown') {
-        // actions.setBpm(store.bpm - 1)
+      } else if (charCode === 45) {
+        // -
+        actions.setBpm(untrack(() => store.bpm) - 1)
+      } else if (charCode === 43) {
+        // +
+        actions.setBpm(untrack(() => store.bpm) + 1)
       }
     }
   })

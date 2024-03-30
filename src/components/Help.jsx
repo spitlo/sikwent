@@ -38,26 +38,40 @@ const Help = () => {
   return (
     <div class="help">
       <h1>Help!</h1>
+      <p>Sikwent is an experiment in music sequencing.</p>
       <p>Lost? Just click the big box and you’re off! You’ll figure it out.</p>
-      <p>
-        You can go back and remove a tick, but you must add at least one tick on
-        each track to unlock the next track
-      </p>
-      <p>
-        The sound for each track is picked at random on load, if you’re unhappy
-        with the order of sounds, hit "Reset". Notes are also picked at random,
-        but always from the Aeolian Dominant aka Hindu Scale in E.
-      </p>
-      <p>To the right of each track, its note is indicated.</p>
-      <p>
-        Use keys <code>a</code>-<code>z</code> to mute tracks.
-      </p>
-      <p>To the left of each track, its mute key is indicated.</p>
-      <p>
-        Save works OK but I wouldn’t trust it with my life. It saves the current
-        state of your composition in the URL, just copy it from the address bar
-        to share it.
-      </p>
+
+      <details>
+        <summary>More help</summary>
+
+        <p>
+          You can go back and remove a tick, but you must add at least one tick
+          on each track to unlock the next track
+        </p>
+        <p>
+          The sound for each track is picked at random on load: if you’re
+          unhappy with the order of sounds, hit RESET. Notes are also picked at
+          random, but always from the Aeolian Dominant aka Hindu Scale in E.
+        </p>
+        <p>To the right of each track, its note is indicated.</p>
+        <p>
+          Use keys <code>a</code>-<code>z</code> to mute tracks.
+        </p>
+        <p>To the left of each track, its mute key is indicated.</p>
+        <p>
+          Save works OK but I wouldn’t trust it with my life. It saves the
+          current state of your composition in the URL, just copy it from the
+          address bar to share it.
+        </p>
+        <p>
+          You can change the BPM with keys <code>+</code> and <code>-</code>,
+          but it’s pretty flaky. It’s probably best to set a BPM before you
+          start, if you’re not happy with the default 70.
+        </p>
+      </details>
+
+      <hr />
+
       <p>Version: {version}</p>
       <Show when={showVersionWarning()}>
         <p class="warning">
