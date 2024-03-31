@@ -41,9 +41,10 @@ const Help = () => {
       <p>Sikwent is an experiment in music sequencing.</p>
       <p>Lost? Just click the big box and you’re off! You’ll figure it out.</p>
 
+      <hr />
+
       <details>
         <summary>More help</summary>
-
         <p>
           You can go back and remove a tick, but you must add at least one tick
           on each track to unlock the next track
@@ -112,6 +113,16 @@ const Help = () => {
             rel="noopener noreferrer"
           >
             Solid
+          </a>
+        </p>
+        <p>
+          URL Compression by{' '}
+          <a
+            href="https://github.com/pieroxy/lz-string"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            lz-string
           </a>
         </p>
       </details>
