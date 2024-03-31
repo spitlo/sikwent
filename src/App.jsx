@@ -29,7 +29,7 @@ function App() {
 
   createEffect(() => {
     const e = event()
-    if (e && e.key) {
+    if (e && e.key && !e.ctrlKey && !e.metaKey && !e.altKey) {
       const charCode = e.key.charCodeAt()
       if (charCode > 96 && charCode < 123) {
         // Letters a-z
