@@ -2,6 +2,10 @@
 
 This changelog is automatically generated.
 
+## v0.1.4
+
+- Implement same save mechanism as in Pikseq [`c3232a3`](../../commit/c3232a3b4fe675d28d14ad7ab19e0438481e143b)
+
 ## v0.1.3
 
 - Better keyhandling [`fa82b8b`](../../commit/fa82b8be3f8472f8184201a975ed31541572032b)
