@@ -2,6 +2,10 @@
 
 This changelog is automatically generated.
 
+## v0.1.3
+
+- Better keyhandling [`fa82b8b`](../../commit/fa82b8be3f8472f8184201a975ed31541572032b)
+
 ## v0.1.2
 
 - Add docs to .prettierignore [`598df31`](../../commit/598df31db4a73b7354d2ffb6f44608e8e157fc20)
